@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anticipatory Storm-Resilient Mars Rover System</title>
+    <meta name="description"
+        content="A Preemptive Orbiter–Rover Collaborative Protection Framework for Mars Exploration">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Orbitron:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button id="prevBtn" class="nav-btn" aria-label="Previous Slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">18</span>
+        </div>
+        <button id="nextBtn" class="nav-btn" aria-label="Next Slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Slide Container -->
+    <div class="presentation-container" id="slideContainer">
+
+        <!-- SLIDE 1: TITLE SLIDE -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content title-slide">
+                <div class="mars-background"></div>
+                <div class="title-content">
+                    <h1 class="main-title">
+                        <span class="title-line">Anticipatory Storm-Resilient</span>
+                        <span class="title-line highlight">Mars Rover System</span>
+                    </h1>
+                    <p class="subtitle">A Preemptive Orbiter–Rover Collaborative Protection Framework</p>
+                    <div class="title-footer">
+                        <span class="team-info">Team HC2-008</span>
+                        <span class="separator">|</span>
+                        <span class="event-info">Mars Innovation Hackathon 2025</span>
+                    </div>
+                </div>
+                <div class="rover-silhouette"></div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: THE CHALLENGE -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <h2 class="slide-title">The Silent Killer of Mars Missions</h2>
+                <div class="content-grid">
+                    <div class="content-left">
+                        <ul class="challenge-list">
+                            <li class="fade-in-item">Mars rovers don't crash—they slowly fade away</li>
+                            <li class="fade-in-item">Environmental hazards > Mechanical failures</li>
+                            <li class="fade-in-item">Primary threat: Dust storms blocking solar power and degrading
+                                systems</li>
+                            <li class="fade-in-item">Current approach: React after the storm hits</li>
+                        </ul>
+                        <div class="key-message">
+                            <p>"Survival is the new frontier of Mars exploration"</p>
+                        </div>
+                    </div>
+                    <div class="content-right">
+                        <div class="comparison-visual">
+                            <div class="rover-state healthy">
+                                <div class="rover-icon">🛰️</div>
+                                <p>Healthy Rover</p>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="rover-state damaged">
+                                <div class="rover-icon dusty">🛰️</div>
+                                <p>Dust-Covered Rover</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: OPPORTUNITY ROVER -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <h2 class="slide-title">When Excellence Wasn't Enough</h2>
+                <div class="case-study-header">
+                    <h3>Case Study: Opportunity Rover</h3>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">90 days</div>
+                        <div class="stat-label">Designed For</div>
+                    </div>
+                    <div class="stat-card highlight">
+                        <div class="stat-value">14 years</div>
+                        <div class="stat-label">Actually Survived</div>
+                    </div>
+                    <div class="stat-card danger">
+                        <div class="stat-value">June 2018</div>
+                        <div class="stat-label">Mission End</div>
+                    </div>
+                </div>
+                <div class="timeline-container">
+                    <div class="timeline-bar">
+                        <div class="timeline-segment design"></div>
+                        <div class="timeline-segment operation"></div>
+                        <div class="timeline-segment storm"></div>
+                    </div>
+                    <div class="timeline-labels">
+                        <span>Launch (2004)</span>
+                        <span>Extended Mission</span>
+                        <span>Global Dust Storm</span>
+                    </div>
+                </div>
+                <div class="final-message">
+                    <p class="quote">"My battery is low and it's getting dark"</p>
+                    <p class="insight">Not a hardware failure—an environmental defeat</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: INSIGHT LANDER -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <h2 class="slide-title">The Slow Decline</h2>
+                <div class="case-study-header">
+                    <h3>Case Study: InSight Lander</h3>
+                </div>
+                <div class="decline-chart">
+                    <canvas id="powerDeclineChart"></canvas>
+                </div>
+                <div class="pattern-analysis">
+                    <h4>The Pattern:</h4>
+                    <div class="pattern-grid">
+                        <div class="pattern-item">✓ Environment was monitored</div>
+                        <div class="pattern-item">✓ Decline was predicted</div>
+                        <div class="pattern-item">✗ No autonomous protection response</div>
+                        <div class="pattern-item">✗ Reactive strategy failed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: CRITICAL INSIGHT -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <h2 class="slide-title">What Mars Missions Teach Us</h2>
+                <div class="lessons-container">
+                    <div class="lesson-card">
+                        <div class="lesson-number">1</div>
+                        <h4>Failures Are Environmental, Not Mechanical</h4>
+                        <p>Systems remain functional but cannot operate</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-number">2</div>
+                        <h4>Threats Are Predictable</h4>
+                        <p>Orbital data shows storms developing days in advance</p>
+                    </div>
+                    <div class="lesson-card">
+                        <div class="lesson-number">3</div>
+                        <h4>Current Systems Are Reactive</h4>
+                        <p>Rovers wait for problems to reach them</p>
+                    </div>
+                </div>
+                <div class="gap-highlight">
+                    <p class="gap-text">"We can see danger coming—but rovers cannot prepare"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: PROBLEM STATEMENT -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <h2 class="slide-title">The Anticipation Gap</h2>
+                <div class="problem-visual">
+                    <div class="problem-diagram">
+                        <div class="diagram-element orbiter">
+                            <span class="icon">🛰️</span>
+                            <p>Orbiter<br />Detects Storm</p>
+                        </div>
+                        <div class="diagram-element gap">
+                            <span class="icon">❓</span>
+                            <p>Communication<br />Gap</p>
+                        </div>
+                        <div class="diagram-element rover">
+                            <span class="icon">🤖</span>
+                            <p>Rover<br />Unaware</p>
+                        </div>
+                        <div class="diagram-element storm">
+                            <span class="icon">🌪️</span>
+                            <p>Storm<br />Approaching</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="core-question">
+                    <h3>"How can a rover prepare itself BEFORE the storm arrives?"</h3>
+                </div>
+                <div class="limitations-list">
+                    <h4>Current Limitations:</h4>
+                    <ul>
+                        <li>Rovers rely only on local, immediate sensing</li>
+                        <li>Rich orbital environmental data exists but isn't used for rover protection</li>
+                        <li>No mechanical anchoring or active sheltering systems</li>
+                        <li>Response begins only when threat is already present</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: OUR SOLUTION -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <h2 class="slide-title">From Reaction to Anticipation</h2>
+                <div class="paradigm-shift">
+                    <div class="approach-comparison">
+                        <div class="approach traditional">
+                            <h4>Traditional</h4>
+                            <div class="approach-flow">
+                                <span>Detect</span> → <span>Endure</span> → <span>Hope</span>
+                            </div>
+                        </div>
+                        <div class="approach-divider"></div>
+                        <div class="approach new">
+                            <h4>Our Approach</h4>
+                            <div class="approach-flow">
+                                <span>Predict</span> → <span>Prepare</span> → <span>Protect</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="core-innovation">
+                    <h3>Core Innovation</h3>
+                    <p>Converting orbital early-warning data into autonomous rover survival actions</p>
+                </div>
+                <div class="architecture-flow">
+                    <div class="flow-step">
+                        <div class="step-icon">📡</div>
+                        <p>Orbiter monitors large-scale environmental changes</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-icon">📨</div>
+                        <p>Transmits early warnings to rover</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-icon">⚙️</div>
+                        <p>Rover executes protection protocols</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-step">
+                        <div class="step-icon">🛡️</div>
+                        <p>Mechanical systems secure critical components</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: SYSTEM OVERVIEW -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <h2 class="slide-title">Collaborative Two-Tier Architecture</h2>
+                <div class="system-diagram">
+                    <div class="tier orbiter-tier">
+                        <h3>ORBITER UNIT</h3>
+                        <p class="tier-subtitle">Intelligence Layer</p>
+                        <ul class="tier-features">
+                            <li>Wide-area atmospheric monitoring</li>
+                            <li>Storm detection and trajectory prediction</li>
+                            <li>Alert generation and transmission</li>
+                            <li>Communication relay</li>
+                        </ul>
+                    </div>
+                    <div class="communication-link">
+                        <div class="link-animation"></div>
+                        <p>Wireless Communication</p>
+                    </div>
+                    <div class="tier rover-tier">
+                        <h3>ROVER UNIT</h3>
+                        <p class="tier-subtitle">Action Layer</p>
+                        <ul class="tier-features">
+                            <li>Autonomous navigation and operation</li>
+                            <li>Alert reception and interpretation</li>
+                            <li>Mechanical protection deployment</li>
+                            <li>Emergency power management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="key-principle">
+                    <p>"Intelligence meets action"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: ORBITER MODULE -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <h2 class="slide-title">Early Warning System</h2>
+                <div class="module-grid">
+                    <div class="module-section">
+                        <h3>Monitoring Capabilities</h3>
+                        <div class="capability-list">
+                            <div class="capability-item">
+                                <span class="cap-icon">🌡️</span>
+                                <div>
+                                    <strong>Temperature sensors</strong>
+                                    <p>Detect atmospheric disturbances</p>
+                                </div>
+                            </div>
+                            <div class="capability-item">
+                                <span class="cap-icon">💡</span>
+                                <div>
+                                    <strong>Light intensity sensors</strong>
+                                    <p>Identify dust concentration increases</p>
+                                </div>
+                            </div>
+                            <div class="capability-item">
+                                <span class="cap-icon">📊</span>
+                                <div>
+                                    <strong>Pressure monitors</strong>
+                                    <p>Track storm formation</p>
+                                </div>
+                            </div>
+                            <div class="capability-item">
+                                <span class="cap-icon">🔍</span>
+                                <div>
+                                    <strong>Change-detection algorithms</strong>
+                                    <p>Identify rapid environmental shifts</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="module-section">
+                        <h3>Alert Protocol</h3>
+                        <div class="protocol-steps">
+                            <div class="protocol-step">Real-time environmental analysis</div>
+                            <div class="protocol-step">Threat assessment and classification</div>
+                            <div class="protocol-step">Wireless broadcast to rover units</div>
+                            <div class="protocol-step">Continuous monitoring during events</div>
+                        </div>
+                        <div class="real-world-note">
+                            <p><strong>Real-World Parallel:</strong> Mars orbiters like MRO already perform atmospheric
+                                monitoring—we leverage this existing capability</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: ROVER MODULE -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content">
+                <h2 class="slide-title">Autonomous Survival Unit</h2>
+                <div class="rover-systems">
+                    <div class="system-card">
+                        <h3>Control System</h3>
+                        <ul>
+                            <li>ESP32 microcontroller for decision-making</li>
+                            <li>Event-driven programming architecture</li>
+                            <li>Low-power operational modes</li>
+                        </ul>
+                    </div>
+                    <div class="system-card">
+                        <h3>Sensing Array</h3>
+                        <ul>
+                            <li><strong>Ultrasonic sensors:</strong> Obstacle detection and terrain mapping</li>
+                            <li><strong>LDR:</strong> Dust-induced light dimming detection</li>
+                            <li><strong>Vibration sensors:</strong> Structural instability and wind force monitoring
+                            </li>
+                            <li><strong>Temperature sensors:</strong> Local environmental conditions</li>
+                        </ul>
+                    </div>
+                    <div class="system-card">
+                        <h3>Actuation Systems</h3>
+                        <ul>
+                            <li>DC motors for mobility</li>
+                            <li>Servo motors for mechanical deployment</li>
+                            <li>Slider-crank mechanisms for anchoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11: MECHANICAL INNOVATION -->
+        <section class="slide" data-slide="11">
+            <div class="slide-content">
+                <h2 class="slide-title">⭐ The Anchoring System</h2>
+                <div class="innovation-grid">
+                    <div class="innovation-section">
+                        <h3>Primary Protection: Screw-Type Ground Anchor</h3>
+                        <ul class="feature-list">
+                            <li>Servo-driven rotational mechanism</li>
+                            <li>Penetrates loose Martian regolith</li>
+                            <li>Creates stable, low-profile stance</li>
+                            <li>Prevents tipping and drift</li>
+                        </ul>
+                    </div>
+                    <div class="innovation-section">
+                        <h3>Secondary Protection: Deployable Dome</h3>
+                        <ul class="feature-list">
+                            <li>Covers sensitive instruments and solar panels</li>
+                            <li>Reduces dust accumulation on critical surfaces</li>
+                            <li>Minimizes wind resistance</li>
+                            <li>Retractable for normal operations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="engineering-principles">
+                    <h4>Engineering Principles:</h4>
+                    <div class="principles-grid">
+                        <div class="principle">Exploits Mars' low wind force (thin atmosphere = less kinetic energy)
+                        </div>
+                        <div class="principle">Works with rover's existing low center of gravity</div>
+                        <div class="principle">Simple, reliable mechanisms—fewer failure points</div>
+                    </div>
+                </div>
+                <div class="why-it-works">
+                    <p>"On Mars, even 100 mph winds have less force than a gentle Earth breeze"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 12: DECISION LOGIC -->
+        <section class="slide" data-slide="12">
+            <div class="slide-content">
+                <h2 class="slide-title">Autonomous Response Protocol</h2>
+                <div class="flowchart">
+                    <div class="flow-phase">
+                        <div class="phase-number">1</div>
+                        <h4>Normal Mode</h4>
+                        <p>Continuous environmental monitoring<br />Standard exploration and science
+                            operations<br />Alert reception system active</p>
+                    </div>
+                    <div class="flow-connector">↓</div>
+                    <div class="flow-phase alert">
+                        <div class="phase-number">2</div>
+                        <h4>Alert Received</h4>
+                        <p>Parse threat level and estimated arrival time<br />Calculate optimal
+                            positioning<br />Initiate protection sequence</p>
+                    </div>
+                    <div class="flow-connector">↓</div>
+                    <div class="flow-phase protect">
+                        <div class="phase-number">3</div>
+                        <h4>Protection Deployment</h4>
+                        <p>Halt all non-essential operations<br />Move to optimal shelter location<br />Deploy ground
+                            anchors<br />Activate protective enclosure<br />Enter low-power emergency mode</p>
+                    </div>
+                    <div class="flow-connector">↓</div>
+                    <div class="flow-phase storm">
+                        <div class="phase-number">4</div>
+                        <h4>Storm Duration</h4>
+                        <p>Maintain minimal power consumption<br />Continue local monitoring<br />Wait for all-clear
+                            conditions</p>
+                    </div>
+                    <div class="flow-connector">↓</div>
+                    <div class="flow-phase recovery">
+                        <div class="phase-number">5</div>
+                        <h4>Recovery Mode</h4>
+                        <p>Retract protective mechanisms<br />System diagnostics<br />Resume normal operations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 13: PROTOTYPE DEMONSTRATION -->
+        <section class="slide" data-slide="13">
+            <div class="slide-content">
+                <h2 class="slide-title">Proof of Concept</h2>
+                <div class="demo-phases">
+                    <div class="demo-phase">
+                        <div class="phase-badge normal">Phase 1</div>
+                        <h4>Normal Operations</h4>
+                        <ul>
+                            <li>Rover navigates autonomously</li>
+                            <li>Sensors actively monitoring</li>
+                            <li>Green status indicators</li>
+                        </ul>
+                    </div>
+                    <div class="demo-phase">
+                        <div class="phase-badge alert">Phase 2</div>
+                        <h4>Alert Reception</h4>
+                        <ul>
+                            <li>Simulated orbiter warning transmitted</li>
+                            <li>Yellow status—alert mode</li>
+                            <li>Rover halts movement</li>
+                        </ul>
+                    </div>
+                    <div class="demo-phase">
+                        <div class="phase-badge protect">Phase 3</div>
+                        <h4>Protection Deployment</h4>
+                        <ul>
+                            <li>Anchoring mechanism activates</li>
+                            <li>Protective systems deploy</li>
+                            <li>Red status—storm mode</li>
+                        </ul>
+                    </div>
+                    <div class="demo-phase">
+                        <div class="phase-badge recovery">Phase 4</div>
+                        <h4>Recovery</h4>
+                        <ul>
+                            <li>Systems retract</li>
+                            <li>Return to normal operations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="scale-note">
+                    <p><strong>Scale Note:</strong> Time-compressed and scaled demonstration—real deployment would occur
+                        over hours with larger mechanisms</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 14: TECHNICAL FEASIBILITY -->
+        <section class="slide" data-slide="14">
+            <div class="slide-content">
+                <h2 class="slide-title">Why This Works in Reality</h2>
+                <div class="feasibility-grid">
+                    <div class="feasibility-card">
+                        <div class="card-icon">✓</div>
+                        <h4>Leverages Existing Infrastructure</h4>
+                        <p>Mars orbiters already collect atmospheric data<br />No new space hardware required<br />Rover
+                            modifications are mechanical, not fundamental redesign</p>
+                    </div>
+                    <div class="feasibility-card">
+                        <div class="card-icon">✓</div>
+                        <h4>Simple, Proven Principles</h4>
+                        <p>Anchoring systems used in terrestrial robotics<br />Protective enclosures are standard
+                            engineering<br />Low-power modes already implemented on missions</p>
+                    </div>
+                    <div class="feasibility-card">
+                        <div class="card-icon">✓</div>
+                        <h4>Energy Efficient</h4>
+                        <p>Protection deployment uses minimal power<br />Preserves energy during storms<br />Quick
+                            return to operations</p>
+                    </div>
+                    <div class="feasibility-card">
+                        <div class="card-icon">✓</div>
+                        <h4>Material Practicality</h4>
+                        <p>No exotic materials required<br />Withstands Mars temperature extremes<br />Resistant to UV
+                            radiation and dust</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 15: BUSINESS & MISSION VALUE -->
+        <section class="slide" data-slide="15">
+            <div class="slide-content">
+                <h2 class="slide-title">Impact and Applications</h2>
+                <div class="value-sections">
+                    <div class="value-section">
+                        <h3>🚀 For Space Agencies</h3>
+                        <ul>
+                            <li><strong>Mission Extension:</strong> Rovers survive longer, collect more data</li>
+                            <li><strong>Risk Reduction:</strong> Protects billion-dollar investments</li>
+                            <li><strong>Mission Success Rate:</strong> Higher probability of completing objectives</li>
+                        </ul>
+                    </div>
+                    <div class="value-section">
+                        <h3>🏭 For Industry</h3>
+                        <ul>
+                            <li><strong>Technology Transfer:</strong> Applicable to Earth-based extreme environment
+                                robotics</li>
+                            <li><strong>Market Applications:</strong> Desert exploration, mining, disaster response</li>
+                            <li><strong>Patent Potential:</strong> Novel mechanical protection systems</li>
+                        </ul>
+                    </div>
+                    <div class="value-section">
+                        <h3>🌍 Broader Applications</h3>
+                        <ul>
+                            <li>Lunar exploration (different environment, same principle)</li>
+                            <li>Autonomous systems in dust-prone environments</li>
+                            <li>Military and security applications</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="roi-perspective">
+                    <p>"Adding $10M in protection systems to save a $2.7B mission is cost-effective insurance"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 16: LIMITATIONS -->
+        <section class="slide" data-slide="16">
+            <div class="slide-content">
+                <h2 class="slide-title">Current Prototype Constraints</h2>
+                <div class="limitations-table">
+                    <div class="limitation-row">
+                        <div class="limitation-category">Communication</div>
+                        <div class="limitation-detail">
+                            <p>Orbiter-to-rover latency not fully modeled</p>
+                            <p>Real Mars communication has 3-22 minute Earth delay</p>
+                        </div>
+                    </div>
+                    <div class="limitation-row">
+                        <div class="limitation-category">Environmental Simulation</div>
+                        <div class="limitation-detail">
+                            <p>Mars atmospheric pressure (0.6% of Earth's) not replicated</p>
+                            <p>Regolith composition simplified</p>
+                        </div>
+                    </div>
+                    <div class="limitation-row">
+                        <div class="limitation-category">Sensor Accuracy</div>
+                        <div class="limitation-detail">
+                            <p>Prototype sensors have lower precision than flight-grade hardware</p>
+                        </div>
+                    </div>
+                    <div class="limitation-row">
+                        <div class="limitation-category">Mechanical Scale</div>
+                        <div class="limitation-detail">
+                            <p>Anchoring depth and force scaled down</p>
+                            <p>Material testing incomplete</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-matters">
+                    <p><strong>Why This Matters:</strong> "This prototype validates the CONCEPT and decision logic—not
+                        final flight hardware"</p>
+                    <p><strong>Next Steps:</strong> Full environmental testing, material qualification, NASA
+                        collaboration</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 17: FUTURE ENHANCEMENTS -->
+        <section class="slide" data-slide="17">
+            <div class="slide-content">
+                <h2 class="slide-title">Evolution Pathway</h2>
+                <div class="roadmap">
+                    <div class="roadmap-phase">
+                        <div class="phase-label">Phase 2</div>
+                        <h4>Intelligence Upgrade</h4>
+                        <ul>
+                            <li>AI-based storm prediction using historical data</li>
+                            <li>Machine learning for optimal anchor positioning</li>
+                            <li>Adaptive response based on storm severity</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-label">Phase 3</div>
+                        <h4>Mechanical Refinement</h4>
+                        <ul>
+                            <li>Variable-depth anchoring based on soil analysis</li>
+                            <li>Multiple anchor points for extreme stability</li>
+                            <li>Self-cleaning mechanisms for sensors</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-label">Phase 4</div>
+                        <h4>Energy Optimization</h4>
+                        <ul>
+                            <li>Solar panel orientation during storms</li>
+                            <li>Energy-aware survival modes</li>
+                            <li>Battery management algorithms</li>
+                        </ul>
+                    </div>
+                    <div class="roadmap-phase">
+                        <div class="phase-label">Phase 5</div>
+                        <h4>Multi-Asset Coordination</h4>
+                        <ul>
+                            <li>Multiple orbiters providing triangulated data</li>
+                            <li>Rover swarm protection protocols</li>
+                            <li>Shared environmental awareness</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="long-term-vision">
+                    <p>"A fully autonomous Martian survival ecosystem"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 18: CLOSING IMPACT -->
+        <section class="slide" data-slide="18">
+            <div class="slide-content closing-slide">
+                <h2 class="slide-title">Prepared, Not Reactive</h2>
+                <div class="core-message">
+                    <blockquote>
+                        "Survival on Mars is not about withstanding force—<br />
+                        it's about anticipating danger and acting before it arrives."
+                    </blockquote>
+                </div>
+                <div class="achievements">
+                    <h3>What We've Demonstrated:</h3>
+                    <div class="achievement-grid">
+                        <div class="achievement">✓ Feasible engineering solution</div>
+                        <div class="achievement">✓ Uses existing orbital infrastructure</div>
+                        <div class="achievement">✓ Simple, reliable mechanical principles</div>
+                        <div class="achievement">✓ Significant mission value</div>
+                    </div>
+                </div>
+                <div class="bigger-picture">
+                    <h3>The Bigger Picture:</h3>
+                    <ul>
+                        <li>Mars exploration is maturing beyond "getting there"</li>
+                        <li>Long-term presence requires environmental adaptation</li>
+                        <li>Our system is the bridge between detection and survival</li>
+                    </ul>
+                </div>
+                <div class="call-to-action">
+                    <p>"Let's ensure the next generation of Mars rovers doesn't just land—they endure."</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Keyboard Shortcuts Info -->
+    <div class="shortcuts-info">
+        <p>Use arrow keys ← → or swipe to navigate</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
